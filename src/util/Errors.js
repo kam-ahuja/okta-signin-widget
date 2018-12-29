@@ -24,6 +24,12 @@ define(['okta', './Enums'], function (Okta, Enums) {
   }
   UnsupportedBrowserError.prototype = new Error();
 
+  function RejectionError(message) {
+    this.name = Enums.REJECTION_ERROR;
+    this.message = message || Okta.loc('error.config');
+  }
+  RejectionError.prototype = new Error();
+
   function OAuthError(message) {
     this.name = Enums.OAUTH_ERROR;
     this.message = message;
@@ -47,7 +53,8 @@ define(['okta', './Enums'], function (Okta, Enums) {
     UnsupportedBrowserError: UnsupportedBrowserError,
     OAuthError: OAuthError,
     RegistrationError: RegistrationError,
-    AuthStopPollInitiationError: AuthStopPollInitiationError
+    AuthStopPollInitiationError: AuthStopPollInitiationError,
+    RejectionError: RejectionError
   };
 
 });

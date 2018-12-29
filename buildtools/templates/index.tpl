@@ -15,6 +15,10 @@
   <script src="js/okta-sign-in.js"></script>
   <script type="text/javascript">
     var options = {{{options}}};
+
+    options.jsc='samplejsc';
+    options.hdm='samplehdm';
+
     var signIn = new OktaSignIn(options);
 
     signIn.renderEl(
@@ -65,6 +69,9 @@
 
       function error(err) {
         alert('ERROR: ' + err);
+        if (err.name === 'REJECTION_ERROR') { 
+          window.location.replace("http://www.experian.com/error.html");
+        }
       }
     );
   </script>

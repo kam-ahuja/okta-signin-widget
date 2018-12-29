@@ -87,6 +87,14 @@ function (Okta, OAuth2Util, Enums, BrowserFeatures, Errors, ErrorCodes) {
       return;
     }
 
+    // Rejection error
+    if (err && err.message === 'Your account is in invalid state: REJECT.') {
+        router.settings.callGlobalError(new Errors.RejectionError(
+        Okta.loc('error.config')
+      ));
+      return;
+    }
+
     // Other errors are handled by the function making the authClient request
     if (err || !res || !res.status) {
       return;

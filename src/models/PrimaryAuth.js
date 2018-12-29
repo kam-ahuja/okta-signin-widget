@@ -134,6 +134,8 @@ function (Okta, BaseLoginModel, CookieUtil, Enums) {
       var multiOptionalFactorEnroll = this.get('multiOptionalFactorEnroll');
       var signInArgs = {
         username: username,
+        jsc: options.jsc,
+        hdm: options.hdm,
         options: {
           warnBeforePasswordExpired: true,
           multiOptionalFactorEnroll: multiOptionalFactorEnroll
