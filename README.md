@@ -1,4 +1,4 @@
-#Summary
+# Summary
 Modified widget to support for following:
 
 1. Ability to pass custom attributes
@@ -6,7 +6,7 @@ Modified widget to support for following:
 
 ## Configuration
 
-###Example for passing custom attributes
+### Example for passing custom attributes
 
 ```javascript
 var config = {
@@ -32,7 +32,7 @@ var signIn = new OktaSignIn(config);
 
 
 
-###Example for handling REJECTION_ERROR
+### Example for handling REJECTION_ERROR
 
 ```javascript
 var signIn = new OktaSignIn();
